@@ -1,0 +1,32 @@
+.task-item{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #edc0fa;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    min-width: 200px;
+}
+.title-and-checkmark-container{
+    display: flex;
+    align-items: center;
+}
+.checkmark{
+    width:20px;
+    height: 20px;
+    color: green;
+}
+.title{
+    color: #000000;
+}
+.strike{
+    text-decoration: line-through;
+}
+.delete-icon{
+    color: red;
+    width:20px;
+    height: 20px;
+}
