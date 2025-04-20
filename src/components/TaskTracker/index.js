@@ -8,7 +8,8 @@ const TaskTracker = () => {
    const [taskList, setTaskList] = useState([])
    const [title, setTitle] = useState('')
    const onChangeTitle = event => setTitle(event.target.value)
-   const addTask = () => {
+   const addTask = event => {
+      event.preventDefault()
       const newTask ={
          id: uuidv4(),
          title: title,
@@ -39,15 +40,15 @@ const TaskTracker = () => {
     <div className='bg-container'>
         <div className='app-container'>
            <h1 className='heading'>Task Tracker</h1>
-           <div className='input-and-button-container'>
+           <form onSubmit={addTask} className='input-and-button-container'>
             <input type="text" className='input-box' value={title} onChange={onChangeTitle} placeholder='Enter the Task...'/>
-            <button type="button" className='button' onClick={addTask}>
+            <button type="submit" className='button'>
                <div className='btn-txt'>
                <CiCirclePlus className='add-icon'/>
               <p className='text'> Add Task </p></div>
                </button>
               
-           </div>
+           </form>
            <ul className='list-container'>
             {taskList.map(each => <TaskItem key={each.id} taskDetails={each} deleteTask={deleteTask} strikeTask={strikeTask}/>)}
            </ul>
